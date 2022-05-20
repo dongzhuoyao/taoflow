@@ -81,7 +81,7 @@ def model_summary(model_list):
         for key, value in param_statistics.items():
             data_param.append([key, value[0], value[1]])
             param_list.append(value[0])
-        from wandb_layerwise_param import plot_param
+        from glow.misc.wandb_layerwise_param import plot_param
         plot_param(np.array(param_list))
 
         table_param = tabulate(data_param,
@@ -286,7 +286,7 @@ if __name__ == "__main__":
                       'pca', 'pca_vis']
 
     import wandb
-    wandb.init(project="chaiyujin_number", entity='vincenthu')
+    wandb.init(project="taoflow-glow", entity='vincenthu')
     #wandb.run.summary["img_to_train"] = img_to_train
 
     if 'pca' in dissec:
